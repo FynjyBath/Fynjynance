@@ -1,0 +1,70 @@
+{% extends "base.html" %}
+
+{% block content %}
+    <style>
+    .button2 {
+        font-size: 36px;
+        width: 220px;
+        height: 70px;
+        border: 2px solid #4CAF50;
+        border-radius: 10px;
+        -webkit-transition-duration: 0.4s; /* Safari */
+        transition-duration: 0.4s;
+        color: green;
+        margin-top: 30px;
+        margin-left: 30px;
+    }
+
+    .button2:hover {
+        font-size: 36px;
+        width: 220px;
+        height: 70px;
+        background-color: #4CAF50; /* Green */
+        color: white;
+    }
+
+    .stroke1 {
+        font-size: 36px;
+        font: sans-serif;
+        color: green;
+        text-shadow: yellow 0 0 2px;
+    }
+
+    .stroke2 {
+        font-size: 36px;
+        font: sans-serif;
+        text-shadow: yellow 0 0 2px;
+    }
+
+    .style1 {
+        margin-top: 30px;
+        margin-left: 30px;
+    }
+    </style>
+    <center>
+    <h1>Что вы хотите продать?</h1>
+    <form action="" method="post">
+        <p>
+        {% for i in form[:2] %}
+            <a class="btn button2" href="/sell/{{i}}/buy">{{i}}</a>
+        {% endfor %}
+        </p>
+        <p>
+        {% for i in form[2:4] %}
+            <a class="btn button2" href="/sell/{{i}}/buy">{{i}}</a>
+        {% endfor %}
+        </p>
+        <p>
+        {% for i in form[4:6] %}
+            <a class="btn button2" href="/sell/{{i}}/buy">{{i}}</a>
+        {% endfor %}
+        </p>
+        <p>
+        {% for i in form[6:8] %}
+            <a class="btn button2" href="/sell/{{i}}/buy">{{i}}</a>
+        {% endfor %}
+        </p>
+        <h1 class="style1">~</h1>
+    </form>
+    </center>
+{% endblock %}

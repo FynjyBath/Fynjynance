@@ -1,0 +1,34 @@
+{% extends "base.html" %}
+
+{% block content %}
+    <style>
+    .button {
+        padding: 32px 16px;
+        font-size: 34px;
+        width: 900px;
+        border: 2px solid #4CAF50;
+        border-radius: 10px;
+        -webkit-transition-duration: 0.4s; /* Safari */
+        transition-duration: 0.4s;
+        color: green;
+    }
+
+    .button:hover {
+        padding: 32px 16px;
+        background-color: #4CAF50; /* Green */
+        color: white;
+    }
+    </style>
+
+    <center>
+    <p><h1>Криптообменник №1 в России</h1></p>
+    </center>
+    <form action="" method="post">
+        <center>
+            <p><a class="btn button" href="/actives">Посмотреть мои активы</a></p>
+            <p><a class="btn button" href="/sell">Обменять валюту онлайн</a></p>
+            <p><a class="btn button" href="/choose">Пополнить баланс/вывести деньги</a></p>
+            <p><a class="btn button" href="/addresses">Адреса обменных пунктов</a></p>
+        </center>
+    </form>
+{% endblock %}

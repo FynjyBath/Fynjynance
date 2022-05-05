@@ -1,0 +1,68 @@
+<!doctype html>
+<html lang="en">
+<head>
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
+    <link rel="stylesheet"
+          href="https://stackpath.bootstrapcdn.com/bootstrap/4.4.1/css/bootstrap.min.css"
+          integrity="sha384-Vkoo8x4CGsO3+Hhxv8T/Q5PaXtkKtu6ug5TOeNV6gBiFeWPGFN9MuhOf23Q9Ifjh"
+          crossorigin="anonymous">
+    <title>{{title}}</title>
+</head>
+<body>
+<header>
+    <style>
+    .button_home {
+        font-size: 16px;
+        width: 180px;
+        border: 2px solid #2d8064;
+        border-radius: 10px;
+        -webkit-transition-duration: 0.4s; /* Safari */
+        transition-duration: 0.4s;
+        font-size: 16px;
+        background-color: #2d8064;
+        color: white;
+        margin-left: 10px;
+    }
+
+    .button_home:hover {
+        background-color: white;
+        font-size: 16px;
+        width: 180px;
+        border: 2px solid #2d8064;
+        border-radius: 10px;
+        -webkit-transition-duration: 0.4s; /* Safari */
+        transition-duration: 0.4s;
+        color: #2d8064;
+    }
+
+    .mainstyle {
+        color: #2d8064;
+    }
+
+    .topm {
+        margin-top: 5px;
+    }
+    </style>
+    <nav class="navbar navbar-light bg-light">
+        <h1 class="mainstyle">Fynjynance</h1>
+        {% if current_user.is_authenticated %}
+            <center>
+                <a class="btn button_home" href="/">На главную</a>
+                <img src="{{ current_user.photo_way }}" alt="{фото нет}">
+                <a class="navbar-brand" href="/logout">{{ current_user.name }}</a>
+            </center>
+        {% else %}
+            <center>
+                <a class="btn button_home" href="/register">Зарегистрироваться</a>
+                <a class="btn button_home" href="/login">Войти</a>
+            </center>
+        {% endif %}
+    </nav>
+</header>
+<!-- Begin page content -->
+<main role="main" class="container">
+    {% block content %}{% endblock %}
+</main>
+</body>
+</html>

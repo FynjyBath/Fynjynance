@@ -1,0 +1,40 @@
+{% extends "base.html" %}
+
+{% block content %}
+<style>
+.tables {
+    width: 315px;
+    margin-top: 30px;
+}
+
+.button2 {
+        font-size: 36px;
+        width: 315px;
+        height: 70px;
+        border: 2px solid #4CAF50;
+        border-radius: 10px;
+        -webkit-transition-duration: 0.4s; /* Safari */
+        transition-duration: 0.4s;
+        color: green;
+        margin-top: 30px;
+    }
+
+    .button2:hover {
+        font-size: 36px;
+        width: 315px;
+        height: 70px;
+        background-color: #4CAF50; /* Green */
+        color: white;
+    }
+</style>
+<center>
+<h1 class="tables">Пополнение</h1>
+<form method="post">
+  <table class="tables">
+    <tr><td><input type="number" required min="0" class="tables" id="number" aria-describedby="numberHelp"
+                                 placeholder="Введите количество {{ val1 }}" name="number"></td></tr>
+    <tr><td><button type="submit" class="btn button2">Пополнить</button></td></tr>
+  </table>
+</form>
+</center>
+{% endblock %}

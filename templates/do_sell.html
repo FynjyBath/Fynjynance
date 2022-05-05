@@ -1,0 +1,94 @@
+{% extends "base.html" %}
+
+{% block content %}
+    <style>
+    .button1 {
+        font-size: 16px;
+        width: 100px;
+        border: 2px solid #4CAF50;
+        border-radius: 10px;
+        -webkit-transition-duration: 0.4s; /* Safari */
+        transition-duration: 0.4s;
+        color: green;
+        margin-left: 1200px;
+        margin-top: 10px;
+    }
+
+    .button1:hover {
+        font-size: 16px;
+        width: 100px;
+        background-color: #4CAF50; /* Green */
+        color: white;
+    }
+
+    .button2 {
+        font-size: 36px;
+        width: 1000px;
+        height: 70px;
+        border: 2px solid #4CAF50;
+        border-radius: 10px;
+        -webkit-transition-duration: 0.4s; /* Safari */
+        transition-duration: 0.4s;
+        color: green;
+        margin-top: 50px;
+    }
+
+    .button2:hover {
+        font-size: 36px;
+        width: 1000px;
+        height: 70px;
+        background-color: #4CAF50; /* Green */
+        color: white;
+    }
+
+    .stroke1 {
+        font-size: 36px;
+        font: sans-serif;
+        color: green;
+        text-shadow: yellow 0 0 2px;
+    }
+
+    .stroke2 {
+        font-size: 36px;
+        font: sans-serif;
+        text-shadow: yellow 0 0 2px;
+    }
+
+    .tables {
+        width: 1000px;
+        margin-top: 50px;
+    }
+    </style>
+    <center>
+        <h1 class="tables">Что вы хотите купить?</h1>
+        <form method="post">
+            <table class="tables">
+                <tr>
+                    <th><h2>Вы продаёте:</h2></th>
+                    <th><h2>{{ val1 }}</h2></th>
+                </tr>
+                <tr>
+                    <th><h2>Вы покупаете:</h2></th>
+                    <th><h2>{{ val2 }}</h2></th>
+                </tr>
+                <tr>
+                    <th><h2>Курс продажи:</h2></th>
+                    <th><h2>{{ kurs }} {{ val2 }} за 1 {{ val1 }}</h2></th>
+                </tr>
+                <tr>
+                    <th><h2>Доступно для продажи:</h2></th>
+                    <th><h2>{{mx}} {{val1}}</h2></th>
+                </tr>
+            </table>
+            <table class="tables">
+                <tr>
+                    <th>
+                        <input type="number" required min="0" max="{{mx}}" class="form-control" id="number" aria-describedby="numberHelp"
+                               placeholder="Введите количество" name="number">
+                    </th>
+                </tr>
+                <tr><th><button type="submit" class="btn button2">Продать</button></th></tr>
+            </table>
+        </form>
+    </center>
+{% endblock %}

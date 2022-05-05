@@ -1,0 +1,35 @@
+{% extends "base.html" %}
+
+{% block content %}
+    <style>
+    .stroke1 {
+        font-size: 30px;
+        font: sans-serif;
+        color: green;
+        text-shadow: yellow 0 0 2px;
+    }
+
+    .stroke2 {
+        font-size: 30px;
+        font: sans-serif;
+        text-shadow: yellow 0 0 2px;
+    }
+
+    .table {
+        width: 600px;
+        margin-left: auto;
+        margin-right: auto;
+    }
+    </style>
+    <center><h1>Активы</h1></center>
+    <form action="" method="post">
+        <table width="500" class="table">
+        {% for i in form.keys() %}
+            <tr>
+                <th class="stroke1">{{ i }}:</th>
+                <td class="stroke2">{{ form[i] }}</td>
+            </tr>
+        {% endfor %}
+        </table>
+    </form>
+{% endblock %}
